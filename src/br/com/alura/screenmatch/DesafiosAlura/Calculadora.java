@@ -1,4 +1,4 @@
-package DesafioAlura1;
+package br.com.alura.screenmatch.DesafiosAlura;
 
 public class Calculadora {
 

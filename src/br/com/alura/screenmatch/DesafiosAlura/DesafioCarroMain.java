@@ -1,4 +1,4 @@
-package DesafioAlura1;
+package br.com.alura.screenmatch.DesafiosAlura;
 
 public class DesafioCarroMain {
     public static void main(String[] args) {
