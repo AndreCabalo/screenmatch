@@ -1,8 +1,6 @@
 package DesafioAlura1;
 
-import DesafioAlura1.Pessoa;
-
-public class DeasafioUmMain {
+public class DeasafioPessoaMain {
     public static void main(String[] args) {
         Pessoa pessoa1 = new Pessoa();
 

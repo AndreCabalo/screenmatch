@@ -1,7 +1,9 @@
-public class Pessoa {
-    String nome;
+package DesafioAlura1;
 
-    String comprimento(){
-        return "Olá mundo!";
+public class Pessoa {
+    public String nome;
+
+    void comprimento(){
+        System.out.println("Olá " + nome + ", bem vindo ao mundo");
     }
 }
