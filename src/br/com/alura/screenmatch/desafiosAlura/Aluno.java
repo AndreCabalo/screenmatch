@@ -1,4 +1,4 @@
-package br.com.alura.screenmatch.DesafiosAlura;
+package br.com.alura.screenmatch.desafiosAlura;
 
 public class Aluno {
     private String nome;

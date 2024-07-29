@@ -1,7 +1,6 @@
-package br.com.alura.screenmatch.DesafiosAlura;
+package br.com.alura.screenmatch.desafiosAlura;
 
 import java.time.LocalDate;
-import java.util.Date;
 
 public class Carro {
     String modelo;
