@@ -1,6 +1,8 @@
 package br.com.alura.screenmatch.testes;
 
 import br.com.alura.screenmatch.calculos.CalculadoraDeTempo;
+import br.com.alura.screenmatch.calculos.FiltroRecomendacao;
+import br.com.alura.screenmatch.model.Episodio;
 import br.com.alura.screenmatch.model.Filme;
 import br.com.alura.screenmatch.model.Serie;
 
@@ -47,6 +49,19 @@ public class Main {
         System.out.println("Tempo total de filmes inclusos na calculadora de tempo " + calculadoraDeTempo.getTempoTotal() + " Min");calculadoraDeTempo.inclui(meuFilme);
         calculadoraDeTempo.inclui(theBoys);
         System.out.println("Tempo total de filmes  + serie inclusos na calculadora de tempo " + calculadoraDeTempo.getTempoTotal() + " Min");
+
+
+//        Testando classificação
+        FiltroRecomendacao filtroRecomendacao = new FiltroRecomendacao();
+        filtroRecomendacao.filtra(meuFilme);
+
+//        Testando episodio
+        Episodio episodio = new Episodio();
+        episodio.setNumero(1);
+        episodio.setSerie(theBoys);
+        episodio.setTotalVisualizacoes(300);
+
+        filtroRecomendacao.filtra(episodio);
 
     }
 }

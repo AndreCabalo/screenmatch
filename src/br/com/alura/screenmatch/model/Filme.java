@@ -1,7 +1,9 @@
 package br.com.alura.screenmatch.model;
 
+import br.com.alura.screenmatch.calculos.Classificavel;
+
 //Filme extende de Titulo
-public class Filme extends Titulo {
+public class Filme extends Titulo implements Classificavel {
 
     private String diretor;
 
@@ -16,6 +18,11 @@ public class Filme extends Titulo {
     @Override
     public void exibeFichaTecnica() {
         System.out.println("O Filme " + super.getNome() + " foi lançado em " + super.getAnoDeLancamento() + " e dirigido por " + diretor);
+    }
+
+    @Override
+    public int getClassificacao() {
+       return (int)pegaMedia()/2;
     }
 }
 
