@@ -52,4 +52,9 @@ public class Serie extends Titulo{
     public void exibeFichaTecnica() {
         System.out.println("A Serie " + super.getNome() + " foi lançada em " + super.getAnoDeLancamento());
     }
+
+    @Override
+    public String toString() {
+        return "Serie: " + this.getNome() + " (" + this.getAnoDeLancamento() + ")";
+    }
 }
