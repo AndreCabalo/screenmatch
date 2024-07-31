@@ -11,9 +11,36 @@ public class Filme extends Titulo implements Classificavel {
         return diretor;
     }
 
+//    Construtores vazio (xuxu)
+    public Filme() {
+    }
+
+//    Construtor com nome e ano de lançamento da classe pai
+    public Filme(String nome, int anoDeLancamento){
+        super(nome, anoDeLancamento);
+    }
+
+//    Construtor com nome, ano de lançamento e duração em minutos
+    public Filme(String nome, int anoDeLancamento, int duracaoEmMinutos) {
+        this.setNome(nome);
+        this.setAnoDeLancamento(anoDeLancamento);
+        this.setDuracaoEmMinutos(duracaoEmMinutos);
+    }
+
+//    Construtor com nome, ano de lançamento e diretor
+    public Filme(String nome, int anoDeLancamento, String diretor) {
+        this.setNome(nome);
+        this.setDiretor(diretor);
+    }
+
+
     public void setDiretor(String diretor) {
         this.diretor = diretor;
     }
+
+
+
+
 
     @Override
     public void exibeFichaTecnica() {
@@ -23,6 +50,11 @@ public class Filme extends Titulo implements Classificavel {
     @Override
     public int getClassificacao() {
        return (int)pegaMedia()/2;
+    }
+
+    @Override
+    public String toString() {
+        return "Filme: " + this.getNome() + " (" + this.getAnoDeLancamento() + ")";
     }
 }
 
