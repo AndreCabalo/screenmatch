@@ -15,6 +15,10 @@ public class MainLists {
         var filmeStarWars = new Filme("Star Wars", 2022, 108);
         filmeStarWars.avalia(8);
         var serieLost = new Serie("Lost", 2004);
+        var f1 = filmeAvenger;
+
+        f1.setNome("Vingadores");
+
 
 
 
@@ -27,7 +31,7 @@ public class MainLists {
 
         for (Titulo item: lista) {
             System.out.println(item);
-            if (item.getClass() == Filme.class){
+            if (item instanceof Filme){
             Filme filme = (Filme) item;
             System.out.println("A classificação deste filme é nota: " + filme.getClassificacao() + "/5");
             }else {
