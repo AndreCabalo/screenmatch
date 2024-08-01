@@ -5,6 +5,9 @@ import br.com.alura.screenmatch.model.Serie;
 import br.com.alura.screenmatch.model.Titulo;
 
 import java.util.ArrayList;
+import java.util.Collection;
+import java.util.Collections;
+import java.util.Comparator;
 
 public class MainLists {
     public static void main(String[] args) {
@@ -38,5 +41,36 @@ public class MainLists {
                 System.out.println("Não é um filme, por tanto não tem classificação");
             }
         }
+
+
+        //Criando lista
+       ArrayList<String> buscaPorArtista = new ArrayList<>();
+        buscaPorArtista.add("Robert Downey Jr");
+        buscaPorArtista.add("Chris Evans");
+        buscaPorArtista.add("Mark Ruffalo");
+        buscaPorArtista.add("Chris Hemsworth");
+        buscaPorArtista.add("Scarlett Johansson");
+        buscaPorArtista.add("Jeremy Renner");
+        buscaPorArtista.add("Tom Hiddleston");
+
+//        Imprimindo lista desordenada
+        System.out.println(buscaPorArtista);
+
+        //Ordenando lista
+        Collections.sort(buscaPorArtista);
+
+        //Imprimindo lista ordenada
+        System.out.println("Despois da ordenação: " + buscaPorArtista);
+
+        Collections.sort(lista);
+        System.out.println("Lista ordenada por nome: " + lista);
+
+        lista.sort(Comparator.comparing(Titulo::getAnoDeLancamento));
+        System.out.println("Lista ordenada por ano: " + lista);
+
+
+
+
+
     }
 }
