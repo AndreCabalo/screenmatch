@@ -51,6 +51,7 @@ public class TesteCartaoConta {
 
             System.out.println("***************************************");
             System.out.println("Saldo disponível: " + cartao.getSaldo());
+            System.out.println("***************************************");
     }
 
 
