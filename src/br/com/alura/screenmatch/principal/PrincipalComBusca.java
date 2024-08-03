@@ -1,5 +1,10 @@
 package br.com.alura.screenmatch.principal;
 
+import br.com.alura.screenmatch.model.Titulo;
+import br.com.alura.screenmatch.model.TituloOmdb;
+import com.google.gson.FieldNamingPolicy;
+import com.google.gson.Gson;
+import com.google.gson.GsonBuilder;
 import com.sun.net.httpserver.Request;
 
 import java.io.IOException;
@@ -23,16 +28,31 @@ public class PrincipalComBusca {
 
         // request é o objeto que representa a requisição
         HttpRequest request = HttpRequest.newBuilder()
-                // URI da API do OMDB, com endereço dinamico
-                .uri(URI.create(endereco))
-                // .build monta a requisição
-                .build();
+                .uri(URI.create(endereco))            // URI da API do OMDB, com endereço dinamico
+                .build();               // .build monta a requisição
 
         // response é o objeto que representa a resposta
         HttpResponse<String> response = client
                 // client.send envia a requisição e recebe a resposta
                 .send(request, HttpResponse.BodyHandlers.ofString());
 
-        System.out.println(response.body());
+
+//Colocando json em uma string
+        String json = response.body();
+
+        System.out.println(json);
+
+//Construindo um objeto gson para fazer a conversão do json para objeto ignorando o case
+        Gson gson = new GsonBuilder().setFieldNamingPolicy(FieldNamingPolicy.UPPER_CAMEL_CASE).create();
+
+//Criando um titulo, e passando o json e passando a classe que ele deve ser convertido
+        TituloOmdb meuTituloOmdb = gson.fromJson(json, TituloOmdb.class);
+
+        Titulo meuTitulo = new Titulo(meuTituloOmdb);
+
+//       printando o nome
+        System.out.println(meuTitulo);
+
+
     }
 }
