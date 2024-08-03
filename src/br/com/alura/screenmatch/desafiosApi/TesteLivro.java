@@ -7,8 +7,7 @@ public class TesteLivro {
     public static void main(String[] args) {
 
         String json = """
-                {
-                    "titulo": "Java 11",
+                {"titulo": "Java 11",
                     "autor": "Deitel",
                     "editora": {
                         "nome": "Alura",
